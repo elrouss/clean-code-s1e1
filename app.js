@@ -30,19 +30,22 @@ var createNewTaskElement = function (taskString) {
   var deleteButtonImg = document.createElement('img'); //delete button image
 
   label.innerText = taskString;
-  label.className = 'task';
+  label.className = 'task tasks__label';
 
   //Each elements, needs appending
   checkBox.type = 'checkbox';
+  checkBox.className = 'tasks__checkbox';
+
   editInput.type = 'text';
-  editInput.className = 'task';
+  editInput.className = 'task tasks__text';
 
   editButton.innerText = 'Edit'; //innerText encodes special characters, HTML does not.
-  editButton.className = 'edit';
+  editButton.className = 'btn edit';
 
-  deleteButton.className = 'delete';
+  deleteButton.className = 'btn delete';
+  deleteButtonImg.className = 'delete__icon';
   deleteButtonImg.src = './remove.svg';
-  deleteButtonImg.alt = 'Icon for deleting a task'
+  deleteButtonImg.alt = 'Icon for deleting a task';
   deleteButton.appendChild(deleteButtonImg);
 
   //and appending.
@@ -59,6 +62,7 @@ var addTask = function () {
   //Create a new list item with the text from the #new-task:
   if (!taskInput.value) return;
   var listItem = createNewTaskElement(taskInput.value);
+  listItem.className = 'tasks__item';
 
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
@@ -105,11 +109,17 @@ var deleteTask = function () {
 };
 
 //Mark task completed
+const completedTasks = Array.from(completedTasksHolder.children);
+completedTasks.forEach((task) => task.children[1].classList.add('tasks__label_type_complete'));
+
 var taskCompleted = function () {
   console.log('Complete Task...');
 
   //Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
+  var label = listItem.children[1];
+
+  label.classList.add('tasks__label_type_complete');
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 };
@@ -120,6 +130,9 @@ var taskIncomplete = function () {
   //When the checkbox is unchecked
   //Append the task list item to the #incomplete-tasks.
   var listItem = this.parentNode;
+  var label = listItem.children[1];
+
+  label.classList.remove('tasks__label_type_complete');
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 };
