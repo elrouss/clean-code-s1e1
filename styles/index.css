@@ -1,0 +1,181 @@
+/* Reset default styles */
+.tasks {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.task,
+.tasks__checkbox {
+  outline: none;
+}
+
+/* Basic Style */
+.page {
+  font-family: Lato, sans-serif;
+  color: #333;
+
+  background-color: #f8f8f8;
+}
+
+.wrapper {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin: 0;
+  padding: 30px 0 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+
+  border-bottom: 2px solid #333;
+}
+
+.visually-hidden {
+  width: 0;
+  height: 0;
+  margin: 0;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Info */
+.info {
+  margin: 0 auto;
+  width: 500px;
+
+  text-align: right;
+}
+
+.info__img {
+  width: 100%;
+}
+
+.info__more-info {
+  font-family: fantasy, cursive;
+}
+
+@media (max-width: 768px) {
+  .info {
+    text-align: center;
+  }
+}
+
+/* Tasks */
+.task {
+  display: inline-block;
+  flex-grow: 1;
+  width: 56%;
+}
+
+.new-tasks__wrapper {
+  display: flex;
+}
+
+.tasks__text {
+  height: 21px;
+  margin: 0;
+  padding: 0 9px;
+
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  color: #888;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.tasks__text:focus {
+  color: #333;
+}
+
+/* New Task */
+.new-tasks__heading {
+  display: block;
+  margin: 0 0 20px;
+}
+
+#new-task {
+  width: 318px;
+}
+
+/* Task item */
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.tasks__checkbox {
+  margin: 0 10px;
+}
+
+.tasks__label {
+  width: 226px;
+  padding-left: 10px;
+  box-sizing: border-box;
+
+  font-size: 18px;
+}
+
+.delete__icon {
+  height: 2em;
+
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.delete__icon:hover {
+  transform: rotateZ(0);
+}
+
+/* Completed */
+.tasks__label_type_complete {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+.tasks__item > .tasks__text {
+  display: none;
+}
+
+.edit-mode > .tasks__text {
+  display: inline-block;
+  width: 224px;
+}
+
+.edit-mode > .tasks__label {
+  display: none;
+}
+
+.btn {
+  width: 60px;
+
+  font-family: Lato, sans-serif;
+  font-size: 15px;
+  color: #888;
+
+  background: none;
+  outline: none;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #3a3a3a;
+}
