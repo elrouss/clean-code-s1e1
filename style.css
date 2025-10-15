@@ -1,13 +1,13 @@
 /* Resetting the Default Styles */
 ul {
-  margin:0;
+  margin: 0;
   padding: 0px;
 }
 li {
-  list-style:none;
+  list-style: none;
 }
 input,button{
-  outline:none;
+  outline: none;
 }
 
 /* Basic Style */
@@ -29,7 +29,7 @@ input,button{
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .header {
     text-align: center;
   }
@@ -138,14 +138,14 @@ input,button{
 
 /* Edit Task */
 .list__item .input[type="text"] {
-  display:none
+  display: none
 }
 
 .edit-mode .input[type="text"] {
-  display:inline-block;
-  width:224px
+  display: inline-block;
+  width: 224px
 }
 
 .edit-mode .label {
-  display:none;
+  display: none;
 }
